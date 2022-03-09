@@ -16,17 +16,8 @@
 // })
 // })
 
-// function postNameReview(addPost){
-//     let post = document.createElement('p')
-//     post.textContent = addPost
-//     newPost.appendChild(post)
-// }
 
-// //Create the full API for the fetch function 
-// function movieData(movie){
-//    const movieData2 = `${movie.url}${movie.key}/${movie.id}` 
-//    return movieData2
-// }
+
 
 // // Pass the API into the fetch to create a new div with all the content
 function fetchMovie(movieData){
@@ -74,23 +65,30 @@ const generateMovie = (data) => {
     const textBox = document.createElement('textarea')
     textBox.placeholder = "Revie Movie Here."
     const submit = document.createElement('button')
+    submit.classList.add="submit-button"
     submit.innerHTML = "submit"
     formBox.append(inputBox)
     formBox.append(textBox)
     formBox.append(submit)
     movieGenertor2.appendChild(formBox)
+    
 
 }  
 }
  
+document.addEventListener('DOMContentLoaded', () =>{
+    document.querySelector('submit-button').addEventListener('submit', (e) => {
+    e.preventDefault()
+    postNameReview(e.target.name.value + " - "+ e.target.post.value)  
+    // postNameReview(e.target.post.value)
+})
+})
 
-// document.addEventListener('DOMContentLoaded', () =>{
-//     document.querySelector('form').addEventListener('submit', (e) => {
-//     e.preventDefault()
-//     postNameReview(e.target.name.value + " - "+ e.target.post.value)  
-//     // postNameReview(e.target.post.value)
-// })
-// })
+function postNameReview(addPost){
+    let post = document.createElement('p')
+    post.textContent = addPost
+    newPost.appendChild(post)
+}
 
 
 // calling the movies to the page with its correct API 
