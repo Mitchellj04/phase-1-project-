@@ -50,14 +50,19 @@ const generateMovie = (data) => {
     const movieGenertor = document.createElement('div')
     movieGenertor.classList.add("movie-generator")
     document.body.appendChild(movieGenertor)
+    const movieGenertor2 = document.createElement('div')
+    movieGenertor2.classList.add('button-div')
     movieGenertor.innerHTML = html
+     movieGenertor.appendChild(movieGenertor2)
+
+
     //create button elements here 
     const buttonDiv = document.createElement('div')
     const likebtn = document.createElement('button')
     const dislikebtn = document.createElement('button')
     likebtn.innerText = 'button'
     dislikebtn.innerText = 'dislike'
-    movieGenertor.appendChild(buttonDiv)
+    movieGenertor2.appendChild(buttonDiv)
     buttonDiv.append(likebtn)
     buttonDiv.append(dislikebtn)
 
@@ -73,7 +78,7 @@ const generateMovie = (data) => {
     formBox.append(inputBox)
     formBox.append(textBox)
     formBox.append(submit)
-    movieGenertor.appendChild(formBox)
+    movieGenertor2.appendChild(formBox)
 
 }  
 }
