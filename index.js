@@ -45,26 +45,35 @@ const generateMovie = (data) => {
        <h3>Genre: ${data.genres}</h3>
        <h3>Rated: ${data.contentRating}</h3>
         <h3>imDb Movie Rating: ${data.imDbRating}</h3>
-        <div class ="buttons">
-        <button class= "thumbs_up_button" id='thumbsUp'><image src="images/thumbsUp.png" id="thumbsUpPic"></button>
-        <input type = "number" id = "likeNumber" value= "0">
-        <button class= "thumbs_down_button" id='thumbsDown'><image src="images/thumbsDown.png" id="thumbsDownPic"></button> 
-        <input type = "number" id = "dislikeNumber" value= "0">
-      </div>
-      <div class="post-container">
-      <form id = "movie-post">
-            <label for="post" class="label"> Movie Review</label>
-            <input tpye="text" id="name" placeholder="Name">
-            <textarea id="post" placeholder="Your Thoughts" class="review-box"></textarea>
-            <input type="submit" id="post-review"></input>
-        </form>
-        </div>
+        <div class = "button"></div>
         </div>`
     const movieGenertor = document.createElement('div')
     movieGenertor.classList.add("movie-generator")
     document.body.appendChild(movieGenertor)
     movieGenertor.innerHTML = html
-    console.log(data)
+    //create button elements here 
+    const buttonDiv = document.createElement('div')
+    const likebtn = document.createElement('button')
+    const dislikebtn = document.createElement('button')
+    likebtn.innerText = 'button'
+    dislikebtn.innerText = 'dislike'
+    movieGenertor.appendChild(buttonDiv)
+    buttonDiv.append(likebtn)
+    buttonDiv.append(dislikebtn)
+
+    // const button = createButton
+    //create textarea 
+    const formBox = document.createElement('form')
+    const inputBox = document.createElement('input')
+    inputBox.placeholder = "Full Name"
+    const textBox = document.createElement('textarea')
+    textBox.placeholder = "Revie Movie Here."
+    const submit = document.createElement('button')
+    submit.innerHTML = "submit"
+    formBox.append(inputBox)
+    formBox.append(textBox)
+    formBox.append(submit)
+    movieGenertor.appendChild(formBox)
 
 }  
 }
@@ -80,19 +89,31 @@ const generateMovie = (data) => {
 
 
 // calling the movies to the page with its correct API 
-const htmlArray = [
-    fetchMovie(movieData(puplFiction)),
-    fetchMovie(movieData(batMan)),
-    fetchMovie(movieData(WolfOfWall)),
-    fetchMovie(movieData(inception)),
-    fetchMovie(movieData(fightClub)),
-    fetchMovie(movieData(titanic)),
-]
+
+    fetchMovie(movieData(puplFiction))
+    fetchMovie(movieData(batMan))
+    fetchMovie(movieData(WolfOfWall))
+    fetchMovie(movieData(inception))
+    fetchMovie(movieData(fightClub))
+    fetchMovie(movieData(titanic))
+    
 const thumbsUp = document.querySelector("#thumbsUp")
 const thumbsDown = document.querySelector("#thumbsDown")
 
-// console.log(document.getElementsByClassName("post-container"))
-// thumbsUp.addEventListener('click', () => {
-//     likeNum.value = parseInt(likeNum.value) + 1 
-// })
 console.log('data')
+
+
+{/* <div class ="buttons">
+<button class= "thumbs_up_button" id='thumbsUp'><image src="images/thumbsUp.png" id="thumbsUpPic"></button>
+<input type = "number" id = "likeNumber" value= "0">
+<button class= "thumbs_down_button" id='thumbsDown'><image src="images/thumbsDown.png" id="thumbsDownPic"></button> 
+<input type = "number" id = "dislikeNumber" value= "0">
+</div>
+<div class="post-container">
+<form>
+    <label for="post" class="label"> Movie Review</label>
+    <input tpye="text" placeholder="Name">
+    <textarea placeholder="Your Thoughts" class="review-box"></textarea>
+    <input type="submit" ></input>
+</form>
+</div> */}

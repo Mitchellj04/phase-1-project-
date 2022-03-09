@@ -21,74 +21,25 @@ function movieData(movie){
     return movieData2
  }
 
-// function fetchMovie(movieData){
-//     fetch(movieData)
-//         .then(data => data.json())
-//         .then( (response) => generateMovie(response) )
+
+const movieArray = [
+    {id:'tt1375666'},
+    {id:'tt0993846'},
+    {id:'tt0468569'},
+    {id:'tt0110912'},
+    {id:'tt0137523'}
+]
+
+
+function movieApi2(item){
+   console.log(`https://imdb-api.com/en/API/Title/k_9hlk7muq/${item.id}`)
     
-//     const generateMovie = (data) => {
-//         const html = {
-//         title: data.fullTitle,
-//         movieImg: data.image,
-//         plot: data.plot,
-//         directors: data.directors,
-//         genre: data.genres,
-//         contentRating: data.contentRating,
-//         imDb: data.imDbRating
-//         }
-      
-//         console.log(html)
-
-//         function renderOneMovie(movie){
-//     const movieContainer = document.createElement('div')
-//     movieContainer.className = 'movie-container'
-//     movieContainer.innerHTML = `
-//     <h1 class="movie-title">${data.fullTitle}</h1>
-//     <img src=${data.image} class="poster">
-//     <div class="movie-block">
-//     <h2>Description: </h2>
-//    <p>${data.plot}</p>
-//    <h3 style= text-align:left;>Director: ${data.directors}</h3>
-//    <h3>Genre: ${data.genres}</h3>
-//    <h3>Rated: ${data.contentRating}</h3>
-//     <h3>imDb Movie Rating: ${data.imDbRating}</h3>
-//     <div class ="buttons">
-//     <button class= "thumbs_up_button" id='thumbsUp'><image src="images/thumbsUp.png" id="thumbsUpPic"></button>
-//     <input type = "number" id = "likeNumber" value= "0">
-//     <button class= "thumbs_down_button" id='thumbsDown'><image src="images/thumbsDown.png" id="thumbsDownPic"></button> 
-//     <input type = "number" id = "dislikeNumber" value= "0">
-//   </div>
-//   <div class="post-container">
-//   <form id = "movie-post">
-//         <label for="post" class="label"> Movie Review</label>
-//         <input tpye="text" id="name" placeholder="Name">
-//         <textarea id="post" placeholder="Your Thoughts" class="review-box"></textarea>
-//         <input type="submit" id="post-review"></input>
-//     </form>
-//     </div>
-//     `
-//     console.log(movieContainer)
-//     const movieGenertor = document.createElement('div')
-//     movieGenertor.classList.add("movie-generator")
-//     document.body.appendChild(movieGenertor)
-//     movieGenertor.innerHTML = html
-// }
-// renderOneMovie()
-  
+}
 
 
+ movieArray.forEach(movieApi2)
 
-//     }  
-
-//     }
-
-// function renderOneMovie(movie){
-//     let movieContainer = document.createElement('div')
-//     movieContainer.className = 'movie-container'
-//     movieContainer.innerHTML = `
-//     <h1 class="movie-title">${htmlArray.title}</h1>
-//     `
-//     console.log(movieContainer)
-// }
-
-console.log('data2')
+fetch(htmlData2)
+    .then(resp => resp.json())
+    .then(data => console.log(data))
+ 
