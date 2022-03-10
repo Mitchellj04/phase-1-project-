@@ -50,45 +50,81 @@ const generateMovie = (data) => {
     //create button elements here 
     const buttonDiv = document.createElement('div')
     const likebtn = document.createElement('button')
+    likebtn.classList.add("like-button")
     const dislikebtn = document.createElement('button')
+    dislikebtn.classList.add('dislike-button')
     likebtn.innerText = 'button'
     dislikebtn.innerText = 'dislike'
     movieGenertor2.appendChild(buttonDiv)
     buttonDiv.append(likebtn)
     buttonDiv.append(dislikebtn)
 
+//event listener for the buttons 
+    likebtn.addEventListener('click', (e)=>{
+        console.log("I Like this movie")
+    })
+
+    dislikebtn.addEventListener('click', (e) =>{
+        console.log("I dont like this movie")
+    })
+
     // const button = createButton
     //create textarea 
+    const divPost = document.createElement('div')
     const formBox = document.createElement('form')
+    divPost.append(formBox)
     const inputBox = document.createElement('input')
+    inputBox.classList.add('name')
     inputBox.placeholder = "Full Name"
     const textBox = document.createElement('textarea')
+    textBox.classList.add('post')
     textBox.placeholder = "Revie Movie Here."
     const submit = document.createElement('button')
-    submit.classList.add="submit-button"
+    submit.classList.add("submit-button")
     submit.innerHTML = "submit"
     formBox.append(inputBox)
     formBox.append(textBox)
     formBox.append(submit)
-    movieGenertor2.appendChild(formBox)
-    
-
-}  
-}
- 
-document.addEventListener('DOMContentLoaded', () =>{
-    document.querySelector('submit-button').addEventListener('submit', (e) => {
+    movieGenertor2.appendChild(divPost)
+    let post = document.createElement('p')
+//event listener for the text box 
+submit.addEventListener('click', (e) => {
     e.preventDefault()
-    postNameReview(e.target.name.value + " - "+ e.target.post.value)  
-    // postNameReview(e.target.post.value)
-})
+    postNameReview(inputBox.value + " - "+ textBox.value)
 })
 
 function postNameReview(addPost){
-    let post = document.createElement('p')
     post.textContent = addPost
-    newPost.appendChild(post)
+    formBox.appendChild(post)
 }
+post.classList.add('post-new')
+}  
+}
+
+const globalLike = document.getElementsByClassName('like-button')
+console.log(globalLike)
+
+globaldislike = document.getElementsByClassName('dislike-button')
+
+// for(let i =0 ; i < globalLike.length; i++){
+//     globalLike[i].addEventListener('click', e =>{
+//         console.log('clicked')
+//     })
+// }
+
+// document.addEventListener('DOMContentLoaded', () =>{
+//     document.getElementsByClassName('submit-button').addEventListener('submit', (e) => {
+//     e.preventDefault()
+//     postNameReview(e.target.name.value + " - "+ e.target.post.value)  
+//     // postNameReview(e.target.post.value)
+// })
+// })
+
+// function postNameReview(addPost){
+//     let post = document.createElement('p')
+//     post.textContent = addPost
+//     console.log(post)
+// }
 
 
 // calling the movies to the page with its correct API 

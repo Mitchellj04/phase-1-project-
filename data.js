@@ -39,7 +39,7 @@ function movieApi2(item){
 
  movieArray.forEach(movieApi2)
 
-fetch(htmlData2)
-    .then(resp => resp.json())
-    .then(data => console.log(data))
+// fetch(htmlData2)
+//     .then(resp => resp.json())
+//     .then(data => console.log(data))
  
