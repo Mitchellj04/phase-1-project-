@@ -10,4 +10,3 @@ const movieArray = [
     {id:'tt4154756'}
 
 ]
-

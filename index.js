@@ -45,8 +45,8 @@ const generateMovie = (data) => {
     const dislikebtn = document.createElement('button')
     dislikebtn.classList.add('dislike-button')
     //button content 
-    likebtn.innerHTML = `<i class="fa-solid fa-thumbs-up"></i><span class="count"> 0</span>`
-    dislikebtn.innerHTML = `<i class="fa-solid fa-thumbs-down"></i><span class="count2"> 0</span>`
+    likebtn.innerHTML = `<i class="fa-solid fa-thumbs-up"></i>`
+    dislikebtn.innerHTML = `<i class="fa-solid fa-thumbs-down"></i>`
     movieGenertor2.appendChild(buttonDiv)
     buttonDiv.append(likebtn)
     buttonDiv.append(dislikebtn)
@@ -55,13 +55,13 @@ const generateMovie = (data) => {
     let clicked = false
 //event listener for the buttons 
     likebtn.addEventListener('click', (e)=>{
-        count.textContent++; 
+        // count.textContent++; 
         likebtn.style.color = 'green'
         
     })
 
     dislikebtn.addEventListener('click', (e) =>{
-        count2.textContent++;
+        // count2.textContent++;
         dislikebtn.style.color = 'red'
     })
 
@@ -70,14 +70,17 @@ const generateMovie = (data) => {
     const divPost = document.createElement('div')
     const formBox = document.createElement('form')
     divPost.append(formBox)
+
     //name box 
     const inputBox = document.createElement('input')
     inputBox.classList.add('name')
     inputBox.placeholder = "Full Name"
+
     //review box 
     const textBox = document.createElement('textarea')
     textBox.classList.add('post')
     textBox.placeholder = "Revie Movie Here."
+
     //submit review button
     const submit = document.createElement('button')
     submit.classList.add("submit-button")
