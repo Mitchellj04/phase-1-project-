@@ -50,18 +50,18 @@ const generateMovie = (data) => {
     movieGenertor2.appendChild(buttonDiv)
     buttonDiv.append(likebtn)
     buttonDiv.append(dislikebtn)
-    let count = document.querySelector('.count')
-    let count2 = document.querySelector('.count2')
-    let clicked = false
+    // let count = document.querySelector('.count')
+    // let count2 = document.querySelector('.count2')
 //event listener for the buttons 
     likebtn.addEventListener('click', (e)=>{
-        // count.textContent++; 
         likebtn.style.color = 'green'
+        dislikebtn.style.color = 'black'
+
         
     })
 
     dislikebtn.addEventListener('click', (e) =>{
-        // count2.textContent++;
+        likebtn.style.color = 'black'
         dislikebtn.style.color = 'red'
     })
 
@@ -98,13 +98,18 @@ const generateMovie = (data) => {
 submit.addEventListener('click', (e) => {
     e.preventDefault()
     postNameReview(inputBox.value + " - "+ textBox.value)
+    console.log(inputBox.value)
 })
 
-function postNameReview(addPost){
+const postDiv = document.createElement('div')
+postDiv.classList.add('post-div')
+
+function postNameReview(addPost){ 
     let post = document.createElement('p')
     post.classList.add('post-new')
     post.textContent = addPost
-    formBox.appendChild(post)
+    formBox.appendChild(postDiv)
+    postDiv.appendChild(post)
 }
     
 }  
@@ -116,7 +121,7 @@ movieArray.forEach(movieApi2)
 const globalLike = document.getElementsByClassName('like-button')
 console.log(globalLike)
 
-globaldislike = document.getElementsByClassName('dislike-button')
+
 
 
     
