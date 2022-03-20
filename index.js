@@ -98,6 +98,8 @@ const generateMovie = (data) => {
 submit.addEventListener('click', (e) => {
     e.preventDefault()
     postNameReview(inputBox.value + " - "+ textBox.value)
+    inputBox.value = ""
+    textBox.value = ""
     console.log(inputBox.value)
 })
 

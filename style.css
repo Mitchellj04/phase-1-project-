@@ -67,6 +67,7 @@
     align-items: center;
     text-decoration: none;
     padding: 10px 20px;
+    margin-left: 10px;
     height: 100%;
     width: 100%;
     border:none;
@@ -75,7 +76,6 @@
     background: #c31432;  
     background: -webkit-linear-gradient(to right, #240b36, #c31432);  
     background: linear-gradient(to right, #240b36, #c31432); 
-    
     color: #fff;
     transition: all 0.3s ease;
 
@@ -89,7 +89,7 @@
 /* Movie Generator CSS */
 .movie-container{
     display: block;
-    width: 100%;
+    width: 90%;
 }
 .movie-generator {
     margin:auto;
@@ -98,6 +98,7 @@
     padding: 40px;
     padding-top: 20px;
     padding-bottom: 10px;
+    margin-top: 20px;
     margin-bottom: 100px;
     margin-left: 10%;
     margin-right: 10%;
