@@ -53,13 +53,13 @@ const generateMovie = (data) => {
     // let count = document.querySelector('.count')
     // let count2 = document.querySelector('.count2')
 //event listener for the buttons 
-    likebtn.addEventListener('click', (e)=>{
+    likebtn.addEventListener('click', (e) =>{
         likebtn.style.color = 'green'
         dislikebtn.style.color = 'black'
 
         
     })
-
+    
     dislikebtn.addEventListener('click', (e) =>{
         likebtn.style.color = 'black'
         dislikebtn.style.color = 'red'
@@ -117,7 +117,7 @@ function postNameReview(addPost){
 }  
 }
 
-
+//ForEach to pass each movie ID
 movieArray.forEach(movieApi2)
 
 const globalLike = document.getElementsByClassName('like-button')

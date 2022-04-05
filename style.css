@@ -1,4 +1,7 @@
 /* Navigation Bar CSS */
+body{
+    background-color: rgb(92, 22, 22);
+}
 .navbar{
     background:rgb(109, 106, 106);
     height:80px;
@@ -21,10 +24,9 @@
     padding: 0 50px;
 }
 #title-logo{
-    background: #8E0E00;
-    background: -webkit-linear-gradient(to right, #1F1C18, #8E0E00); 
-    background: linear-gradient(to right, #1F1C18, #8E0E00); 
-    
+    background: #c31432;  
+    background: -webkit-linear-gradient(to right, #240b36, #c31432);  
+    background: linear-gradient(to right, #240b36, #c31432); 
     background-size: 100%;
     background-clip: text;
     -webkit-background-clip: text;
@@ -134,6 +136,8 @@
     padding-left: 20px;
     color:black;
 }
+
+/* Text CSS inside generator */
 p{
     color:white;
     text-align: left;
@@ -173,6 +177,10 @@ h3{
 }
 .post{
     width: 50%;
+}
+.filmRoll{
+    width: 80px;
+    margin: 20px;
 }
 
 
