@@ -46,7 +46,7 @@ const generateMovie = (data) => {
     const dislikebtn = document.createElement('button')
     dislikebtn.classList.add('dislike-button')
     //button content 
-    likebtn.innerHTML = `<i class="fa-solid fa-thumbs-up"><span class="likecount"> 0</span></i>`
+    likebtn.innerHTML = `<i class="fa-solid fa-thumbs-up"></i>`
     dislikebtn.innerHTML = `<i class="fa-solid fa-thumbs-down"></i>`
     movieGenertor2.appendChild(buttonDiv)
     buttonDiv.append(likebtn)
