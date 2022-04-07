@@ -27,6 +27,7 @@ const generateMovie = (data) => {
         <h3>imDb Movie Rating: ${data.imDbRating}</h3>
         <div class = "button"></div>
         </div>`
+    
     const movieGenertor = document.createElement('div')
     movieGenertor.classList.add("movie-generator")
     document.body.appendChild(movieGenertor)
@@ -45,18 +46,16 @@ const generateMovie = (data) => {
     const dislikebtn = document.createElement('button')
     dislikebtn.classList.add('dislike-button')
     //button content 
-    likebtn.innerHTML = `<i class="fa-solid fa-thumbs-up"></i>`
+    likebtn.innerHTML = `<i class="fa-solid fa-thumbs-up"><span class="likecount"> 0</span></i>`
     dislikebtn.innerHTML = `<i class="fa-solid fa-thumbs-down"></i>`
     movieGenertor2.appendChild(buttonDiv)
     buttonDiv.append(likebtn)
     buttonDiv.append(dislikebtn)
-    // let count = document.querySelector('.count')
-    // let count2 = document.querySelector('.count2')
+
 //event listener for the buttons 
     likebtn.addEventListener('click', (e) =>{
         likebtn.style.color = 'green'
         dislikebtn.style.color = 'black'
-
         
     })
     

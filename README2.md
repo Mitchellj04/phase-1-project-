@@ -9,7 +9,7 @@ This website was built to review some of the most popular movies to be created.
 Run the server to launch the HTML page in your browser
 
 ```bash
-npm install -g live-server
+GO Live with the server attachment 
 ```
 
 ## How it works
