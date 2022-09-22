@@ -128,11 +128,15 @@ body{
     text-align: center;
 }
 .post-div{
-    background-color:rgb(255, 255, 255)
+    background-color:rgb(255, 255, 255);
+    align-items: center;
+    text-align: center;
+    
 
 }
 .post-new{
     /* background-color: white; */
+    align-items: center;
     padding-left: 20px;
     color:black;
 }

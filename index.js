@@ -7,119 +7,189 @@
 
 // // Pass the API into the fetch to create a new div with all the content
 
-function movieApi2(item){
-    debugger
-    fetch(`https://imdb-api.com/en/API/Title/k_9hlk7muq/${item.id}`)
-    .then(resp => resp.json())
-    .then(data => generateMovie(data))
+// const movieArray = [
+//     {id:'tt1375666'},
+//     {id:'tt0993846'},
+//     {id:'tt0468569'},
+//     {id:'tt0110912'},
+//     {id:'tt0137523'},
+//     {id:'tt0068646'},
+//     {id:'tt4154756'},
+//     {id:'tt1825683'}
+// ]
 
-
-    const generateMovie = (data) => {
-        const html = 
-            `<div class="movie-container"><h1 class="movie-title">${data.fullTitle}</h1>
-            <img src=${data.image} class="poster">
-            <div class="movie-block">
-            <h2>Description: </h2>
-            <p>${data.plot}</p>
-            <h3>Director: ${data.directors}</h3>
-            <h3>Genre: ${data.genres}</h3>
-            <h3>Rated: ${data.contentRating}</h3>
-            <h3>imDb Movie Rating: ${data.imDbRating}</h3>
-            <div class = "button"></div>
-            </div>`
-        
-            const movieGenertor = document.createElement('div')
-            movieGenertor.classList.add("movie-generator")
-            document.body.appendChild(movieGenertor)
-            const movieGenertor2 = document.createElement('div')
-            movieGenertor2.classList.add('button-div')
-            movieGenertor.innerHTML = html
-            movieGenertor.appendChild(movieGenertor2)
-
-
-            //create button elements here 
-            const buttonDiv = document.createElement('div')
-            //like button
-            const likebtn = document.createElement('button')
-            likebtn.classList.add("like-button")
-            //dislike button
-            const dislikebtn = document.createElement('button')
-            dislikebtn.classList.add('dislike-button')
-            //button content 
-            likebtn.innerHTML = `<i class="fa-solid fa-thumbs-up"></i>`
-            dislikebtn.innerHTML = `<i class="fa-solid fa-thumbs-down"></i>`
-            movieGenertor2.appendChild(buttonDiv)
-            buttonDiv.append(likebtn)
-            buttonDiv.append(dislikebtn)
-
-            //event listener for the buttons 
-            likebtn.addEventListener('click', (e) =>{
-                likebtn.style.color = 'green'
-                dislikebtn.style.color = 'black'  
-            })
-    
-            dislikebtn.addEventListener('click', (e) =>{
-                likebtn.style.color = 'black'
-                dislikebtn.style.color = 'red'
-            })
-
-            // const button = createButton
-            //create textarea 
-            const divPost = document.createElement('div')
-            const formBox = document.createElement('form')
-            divPost.append(formBox)
-
-            //name box 
-            const inputBox = document.createElement('input')
-            inputBox.classList.add('name')
-            inputBox.placeholder = "Full Name"
-
-            //review box 
-            const textBox = document.createElement('textarea')
-            textBox.classList.add('post')
-            textBox.placeholder = "Revie Movie Here."
-
-            //submit review button
-            const submit = document.createElement('button')
-            submit.classList.add("submit-button")
-            submit.innerHTML = "submit"
-            let review = document.createElement('h3')
-            review.innerHTML = "Reviews:"
-            formBox.append(inputBox)
-            formBox.append(textBox)
-            formBox.append(submit)
-            formBox.appendChild(review)
-            movieGenertor2.appendChild(divPost)
-
-
-            //event listener for the text box 
-            submit.addEventListener('click', (e) => {
-                e.preventDefault()
-                postNameReview(inputBox.value + " - "+ textBox.value)
-                inputBox.value = ""
-                textBox.value = ""
-                console.log(inputBox.value)
-            })
-
-            const postDiv = document.createElement('div')
-            postDiv.classList.add('post-div')
-
-            const postNameReview = (addPost) =>{ 
-            let post = document.createElement('p')
-            post.classList.add('post-new')
-            post.textContent = addPost
-            formBox.appendChild(postDiv)
-            postDiv.appendChild(post)
-        }
-    
-    }  
-}
+const movieArray = [
+    {id:'tt1375666'}
+]
 
 //ForEach to pass each movie ID
 movieArray.forEach(movieApi2)
 
-const globalLike = document.getElementsByClassName('like-button')
-console.log(globalLike)
+
+
+function movieApi2(item){
+    fetch(`https://imdb-api.com/en/API/Title/k_9hlk7muq/${item.id}`)
+        .then(resp => resp.json())
+        .then(data => generateMovie(data))
+
+}
+
+const generateMovie = (data) => {
+    const html = 
+        `<div class="movie-container"><h1 class="movie-title">${data.fullTitle}</h1>
+        <img src=${data.image} class="poster">
+        <div class="movie-block">
+        <h2>Description: </h2>
+        <p>${data.plot}</p>
+        <h3>Director: ${data.directors}</h3>
+        <h3>Genre: ${data.genres}</h3>
+        <h3>Rated: ${data.contentRating}</h3>
+        <h3>imDb Movie Rating: ${data.imDbRating}</h3>
+        <div class = "button"></div>
+        </div> `
+    
+        const movieGenertor = document.createElement('div')
+        movieGenertor.classList.add("movie-generator")
+        document.body.appendChild(movieGenertor)
+        movieGenertor.innerHTML = html
+
+        const movieGenertor2 = document.createElement('div')
+        movieGenertor2.classList.add('button-div')
+        movieGenertor.appendChild(movieGenertor2)
+
+       
+        movieGenertor2.appendChild(buttonHandler())
+
+
+       
+
+        movieGenertor2.appendChild(reviewForm())
+
+
+        
+
+
+}  
+
+//create a counter that will increase when the like button is pressed 
+//the new count element should start at 0 and increase by 1 when liked 
+
+
+
+
+function buttonHandler(){
+
+    
+
+     //create button elements here 
+     const buttonDiv = document.createElement('div')
+
+     //count 
+    let count = 0
+    let countElement = document.createElement('p')
+    countElement.innerHTML = `Votes: ${count}`
+    buttonDiv.appendChild(countElement)
+
+
+     //like button
+     const likebtn = document.createElement('button')
+     likebtn.classList.add("like-button")
+
+
+     //dislike button
+     const dislikebtn = document.createElement('button')
+     dislikebtn.classList.add('dislike-button')
+
+      //button content 
+      likebtn.innerHTML = `<i class="fa-solid fa-thumbs-up"></i>`
+      dislikebtn.innerHTML = `<i class="fa-solid fa-thumbs-down"></i>`
+
+      // buttonDiv.append(like)
+      buttonDiv.append(likebtn)
+        
+
+      // buttonDiv.append(dislike)
+      buttonDiv.append(dislikebtn)
+
+
+
+      //event listener for the buttons 
+      likebtn.addEventListener('click', (e) =>{
+        likebtn.style.color = 'green'
+        dislikebtn.style.color = 'black' 
+        countElement.innerHTML = `Votes: ${count += 1}`
+
+
+    })
+
+    dislikebtn.addEventListener('click', (e) =>{
+        likebtn.style.color = 'black'
+        dislikebtn.style.color = 'red'
+        countElement.innerHTML = `Votes: ${count = count - 1}`
+    })
+
+    return buttonDiv;
+}
+
+
+function reviewForm(){
+     //create textarea 
+     const divPost = document.createElement('div')
+     const formBox = document.createElement('form')
+     divPost.append(formBox)
+
+     //name box 
+     const inputBox = document.createElement('input')
+     inputBox.classList.add('name')
+     inputBox.placeholder = "Full Name"
+
+     //review box 
+     const textBox = document.createElement('textarea')
+     textBox.classList.add('post')
+     textBox.placeholder = "Revie Movie Here."
+
+    //submit review button
+    const submit = document.createElement('button')
+    submit.classList.add("submit-button")
+    submit.innerHTML = "submit"
+    let review = document.createElement('h3')
+    review.innerHTML = "Reviews:"
+    formBox.append(inputBox)
+    formBox.append(textBox)
+    formBox.append(submit)
+    formBox.appendChild(review)
+
+    //event listener for the text box 
+    submit.addEventListener('click', (e) => {
+        e.preventDefault()
+        postNameReview(inputBox.value + " - "+ textBox.value)
+        inputBox.value = ""
+        textBox.value = ""
+        console.log(inputBox.value)
+    })
+
+    const postDiv = document.createElement('div')
+    postDiv.classList.add('post-div')
+
+    const postNameReview = (addPost) =>{ 
+    let post = document.createElement('p')
+    post.classList.add('post-new')
+    post.textContent = addPost
+    formBox.appendChild(postDiv)
+    postDiv.appendChild(post)
+}
+    return divPost
+    
+
+}
+
+
+
+
+
+
+
+
 
 
 
