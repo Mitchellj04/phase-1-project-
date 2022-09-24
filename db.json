@@ -1,0 +1,95 @@
+{
+    "movies":
+[
+    {
+        "id": "tt1375666",
+        "title": "Inception",
+        "image": "https://m.media-amazon.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_Ratio0.6762_AL_.jpg",
+        "plot": "A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O., but his tragic past may doom the project and his team to disaster.",
+        "directors": "Christopher Nolan",
+        "genre": "Action, Adventure, Sci-Fi",
+        "contentRating": "PG-13",
+        "imDBRating": "8.8"
+
+
+    },
+    {
+        "id": "tt0993846",
+        "title": "The Wolf of Wall Street",
+        "image": "https://m.media-amazon.com/images/M/MV5BMjIxMjgxNTk0MF5BMl5BanBnXkFtZTgwNjIyOTg2MDE@._V1_Ratio0.6762_AL_.jpg",
+        "plot": "Based on the true story of Jordan Belfort, from his rise to a wealthy stock-broker living the high life to his fall involving crime, corruption and the federal government.",
+        "directors": "Martin Scorsese",
+        "genre": "Biography, Comedy, Crime",
+        "contentRating": "R",
+        "imDbRating": "8.2"
+
+
+    },
+    {
+        "id": "tt0468569",
+        "title": "The Dark Knight",
+        "image": "https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_Ratio0.6762_AL_.jpg",
+        "plot": "When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman must accept one of the greatest psychological and physical tests of his ability to fight injustice.",
+        "directors": "Christopher Nolan",
+        "genres": "Action, Crime, Drama",
+        "contentRating": "PG-13",
+        "imDbRating": "9"
+
+
+    },
+    {
+        "id": "tt0110912",
+        "title": "Pulp Fiction",
+        "image": "https://m.media-amazon.com/images/M/MV5BNGNhMDIzZTUtNTBlZi00MTRlLWFjM2ItYzViMjE3YzI5MjljXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_Ratio0.6904_AL_.jpg",
+        "plot": "The lives of two mob hitmen, a boxer, a gangster and his wife, and a pair of diner bandits intertwine in four tales of violence and redemption.",
+        "directors": "Quentin Tarantino",
+        "genres": "Crime, Drama",
+        "contentRating": "R",
+        "imDbRating": "8.9"
+
+
+    },
+    {
+        "id": "tt0137523",
+        "title": "Fight Club",
+        "image": "https://m.media-amazon.com/images/M/MV5BNDIzNDU0YzEtYzE5Ni00ZjlkLTk5ZjgtNjM3NWE4YzA3Nzk3XkEyXkFqcGdeQXVyMjUzOTY1NTc@._V1_Ratio0.6762_AL_.jpg",
+        "plot": "An insomniac office worker and a devil-may-care soap maker form an underground fight club that evolves into much more.",
+        "directors": "David Fincher",
+        "genres": "Drama",
+        "contentRating": "R",
+        "imDbRating": "8.8"
+
+
+    },
+    {
+        "id": "tt0068646",
+        "title": "The Godfather",
+        "image": "https://m.media-amazon.com/images/M/MV5BM2MyNjYxNmUtYTAwNi00MTYxLWJmNWYtYzZlODY3ZTk3OTFlXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_Ratio0.7046_AL_.jpg",
+        "plot": "The aging patriarch of an organized crime dynasty in postwar New York City transfers control of his clandestine empire to his reluctant youngest son.",
+        "directors": "Francis Ford Coppola",
+        "genres": "Crime, Drama",
+        "contentRating": "R",
+        "imDbRating": "9.2"
+    },
+    {
+        "id": "tt4154756",
+        "title": "Avengers: Infinity War",
+        "image": "https://m.media-amazon.com/images/M/MV5BMjMxNjY2MDU1OV5BMl5BanBnXkFtZTgwNzY1MTUwNTM@._V1_Ratio0.6762_AL_.jpg",
+        "plot": "The Avengers and their allies must be willing to sacrifice all in an attempt to defeat the powerful Thanos before his blitz of devastation and ruin puts an end to the universe.",
+        "directors": "Anthony Russo, Joe Russo",
+        "genres": "Action, Adventure, Sci-Fi",
+        "contentRating": "PG-13",
+        "imDbRating": "8.4"
+    },
+    {
+        "id": "tt1825683",
+        "title": "Black Panther",
+        "image": "https://m.media-amazon.com/images/M/MV5BMTg1MTY2MjYzNV5BMl5BanBnXkFtZTgwMTc4NTMwNDI@._V1_Ratio0.6762_AL_.jpg",
+        "plot": "T'Challa, heir to the hidden but advanced kingdom of Wakanda, must step forward to lead his people into a new future and must confront a challenger from his country's past.",
+        "directors": "Ryan Coogler",
+        "genres": "Action, Adventure, Sci-Fi",
+        "contentRating": "PG-13",
+        "imDbRating": "7.3"
+    }
+]
+}

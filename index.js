@@ -3,40 +3,32 @@
 //It will include the image of the movie and a like or dislike glyph. 
 //You will also be able to post a review about the movie which will be posted in the review section. 
 
+// make the search button functional to search by movie title 
 
 
 // // Pass the API into the fetch to create a new div with all the content
 
-// const movieArray = [
-//     {id:'tt1375666'},
-//     {id:'tt0993846'},
-//     {id:'tt0468569'},
-//     {id:'tt0110912'},
-//     {id:'tt0137523'},
-//     {id:'tt0068646'},
-//     {id:'tt4154756'},
-//     {id:'tt1825683'}
-// ]
-
-const movieArray = [
-    {id:'tt1375666'}
-]
-
-//ForEach to pass each movie ID
-movieArray.forEach(movieApi2)
 
 
 
-function movieApi2(item){
-    fetch(`https://imdb-api.com/en/API/Title/k_9hlk7muq/${item.id}`)
+//Global variable 
+        const movieGenertor = document.createElement('div')
+        movieGenertor.classList.add("movie-generator")
+        document.body.appendChild(movieGenertor)
+
+       
+
+function movieApi2(){
+    fetch(` http://localhost:9500/moviejs`)
         .then(resp => resp.json())
-        .then(data => generateMovie(data))
+        .then(movie => movie.forEach(movies => generateMovie(movies)))
 
 }
 
+
 const generateMovie = (data) => {
-    const html = 
-        `<div class="movie-container"><h1 class="movie-title">${data.fullTitle}</h1>
+    const movieHtml = 
+        `<div class="movie-container"><h1 class="movie-title">${data.title}</h1>
         <img src=${data.image} class="poster">
         <div class="movie-block">
         <h2>Description: </h2>
@@ -48,23 +40,21 @@ const generateMovie = (data) => {
         <div class = "button"></div>
         </div> `
     
-        const movieGenertor = document.createElement('div')
-        movieGenertor.classList.add("movie-generator")
-        document.body.appendChild(movieGenertor)
-        movieGenertor.innerHTML = html
+
+        const newMovieGenerator = document.createElement('div')
+        newMovieGenerator.classList.add("movie-generator")
+        movieGenertor.append(newMovieGenerator)
+        newMovieGenerator.innerHTML = movieHtml
 
         const movieGenertor2 = document.createElement('div')
         movieGenertor2.classList.add('button-div')
-        movieGenertor.appendChild(movieGenertor2)
+        newMovieGenerator.appendChild(movieGenertor2)
 
        
         movieGenertor2.appendChild(buttonHandler())
-
-
        
 
         movieGenertor2.appendChild(reviewForm())
-
 
         
 
@@ -187,11 +177,47 @@ function reviewForm(){
 
 
 
-
-
-
-
-
-
-
+const searchBar = (data) => {
+    let searchInput = document.getElementById('searchInput')
     
+    // let mapper = data.map(movie => movie.title)
+    console.log(data)
+        
+    searchBarButton.addEventListener('click', () => {
+        let finder = data.find(movie => movie.title == searchInput.value)
+
+        const html =
+        `<div class="movie-container"><h1 class="movie-title">${finder.title}</h1>
+            <img src=${finder.image} class="poster">
+            <div class="movie-block">
+            <h2>Description: </h2>
+            <p>${finder.plot}</p>
+            <h3>Director: ${finder.directors}</h3>
+            <h3>Genre: ${finder.genre}</h3>
+            <h3>Rated: ${finder.contentRating}</h3>
+            <h3>imDb Movie Rating: ${finder.imDbRating}</h3>
+            <div class = "button"></div>
+            </div> `
+
+        movieGenertor.innerHTML = html
+        document.body.appendChild(movieGenertor)
+        console.log(finder)
+    })
+}
+
+
+function movieApi(){
+    fetch(`http://localhost:8000/movies`)
+        .then(resp => resp.json())
+        .then((data) => { 
+            searchBar(data)
+        })
+        
+}
+
+let searchBarButton = document.getElementById('search-bar')
+console.log(searchBarButton)
+
+movieApi2()
+movieApi()
+
